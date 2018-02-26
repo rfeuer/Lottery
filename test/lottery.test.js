@@ -107,12 +107,13 @@ describe('Lottery Contract', () => {
       from: accounts[0]
     });
 
-    //console.log(players.length);
+    //console.log(lottery.options);
     assert.equal(0,players.length);
 
-    const contractBalance = web3.eth.getBalance(lottery.options.address);
-    console.log(contractBalance);
-  //  assert.equal(0, contractBalance);
+    //contract balance should be zero
+    const contractBalance = await web3.eth.getBalance(lottery.options.address);
+    //console.log(contractBalance);
+    assert.equal(0, contractBalance);
 
   });
 });
